@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, Arial, sans-serif;
+  }
+  
+  body {
+    color: white;
+    background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1920');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .bg-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    z-index: -1;
+  }
+  
+
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+  }
+  
+  .nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+  }
+  
+
+  .slider {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    height: 100%;
+    animation: slideMove 20s infinite ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 100vw;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .slider-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(2px);
+  }
+  
+  .slider-text h1 {
+    font-size: 3rem;
+  }
+  
+  @keyframes slideMove {
+    0%,20% { transform: translateX(0); }
+    25%,45% { transform: translateX(-100vw); }
+    50%,70% { transform: translateX(-200vw); }
+    75%,100% { transform: translateX(-300vw); }
+  }
+  
+
+  .cards {
+    padding: 90px 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .card h3 {
+    margin: 15px;
+  }
+  
+  .card p {
+    margin: 0 15px 20px;
+  }
+  
+  .card:hover {
+    transform: translateY(-12px);
+  }
+  
+
+  .booking {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+  }
+  
+  input, select, textarea {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  button {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #ff9800;
+    cursor: pointer;
+  }
+  
+
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    animation: glow 3s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 10px #ff9800; }
+    to { box-shadow: 0 0 25px #ff5722; }
+  }
+  
+
+  @media (max-width: 900px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+    .nav {
+      display: none;
+    }
+  }
+  
