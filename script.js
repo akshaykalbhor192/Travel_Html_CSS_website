@@ -1,39 +1,5 @@
-/* =========================
-   Smooth Scroll Navigation
-========================= */
-document.querySelectorAll(".nav a").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
 
-    const targetId = link.getAttribute("href");
-    const targetSection = document.querySelector(targetId);
 
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
-/* =========================
-   Slider Pause on Hover
-========================= */
-const slides = document.querySelector(".slides");
-
-if (slides) {
-  slides.addEventListener("mouseenter", () => {
-    slides.style.animationPlayState = "paused";
-  });
-
-  slides.addEventListener("mouseleave", () => {
-    slides.style.animationPlayState = "running";
-  });
-}
-
-/* =========================
-   Booking Form Validation
-========================= */
 const form = document.querySelector("form");
 
 if (form) {
@@ -58,9 +24,7 @@ if (form) {
   });
 }
 
-/* =========================
-   Click Logo → Scroll Top
-========================= */
+
 const logo = document.querySelector(".header h2");
 
 if (logo) {
@@ -71,3 +35,4 @@ if (logo) {
     });
   });
 }
+
